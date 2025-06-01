@@ -238,7 +238,7 @@
   /* border: 2px solid black; */
   padding: 50px 0;
   display: flex;
-    gap: 20px;
+  gap: 20px;
   justify-content: space-around;
 }
 .works {
@@ -355,6 +355,21 @@ textarea {
   animation-timeline: view();
   animation-range: entry 0 cover 40%;
 }
+.common-animation {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 @keyframes appear-bottom {
   from {
     opacity: 0;
@@ -386,11 +401,10 @@ textarea {
 /* responsive section */
 
 @media screen and (max-width: 576px) {
-  .header{
+  .header {
     justify-content: space-between;
     padding: 20px;
     width: calc(90% - 40px);
-    
   }
   .menu-icon {
     display: block;
@@ -496,51 +510,4 @@ textarea {
   #submit-btn {
     box-shadow: 0 0 4px #3f8e00;
   }
-
-  /* animated part */
-  /* .animated-from-left {
-  animation: appear-left linear;
-  animation-timeline: view();
-  animation-range: entry 0 cover 40%;
-}
-@keyframes appear-left {
-  from {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-  .animated-from-right {
-  animation: appear-right linear;
-  animation-timeline: view();
-  animation-range: entry 0 cover 40%;
-}
-@keyframes appear-right {
-  from {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-} */
-  .common-animation {
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0 cover 40%;
-}
-@keyframes appear {
-  from {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 }
