@@ -5,8 +5,8 @@
   padding: 0;
   font-family: "Playfair Display", serif;
 }
-body{
-    overflow-x: hidden;
+body {
+  overflow-x: hidden;
 }
 :root {
   --common-color: #9c9c9c;
@@ -307,6 +307,12 @@ textarea {
   font-size: 18px;
   color: var(--common-color);
   padding: 30px 0;
+}
+.animated-from-left,
+.animated-from-right,
+.animated-from-top,
+.animated-from-bottom {
+  will-change: transform;
 }
 .animated-from-left {
   animation: appear-left linear;
