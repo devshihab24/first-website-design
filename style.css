@@ -5,6 +5,9 @@
   padding: 0;
   font-family: "Playfair Display", serif;
 }
+body{
+    overflow-x: hidden;
+}
 :root {
   --common-color: #9c9c9c;
 }
@@ -313,7 +316,7 @@ textarea {
 @keyframes appear-left {
   from {
     opacity: 0;
-    transform: translateX(-70px) scale(0.6);
+    transform: translateX(-70px) scale(0.9);
   }
   to {
     opacity: 1;
@@ -328,7 +331,7 @@ textarea {
 @keyframes appear-right {
   from {
     opacity: 0;
-    transform: translateX(70px) scale(0.6);
+    transform: translateX(70px) scale(0.9);
   }
   to {
     opacity: 1;
@@ -343,7 +346,7 @@ textarea {
 @keyframes appear-top {
   from {
     opacity: 0;
-    transform: translateY(-70px) scale(0.6);
+    transform: translateY(-70px) scale(0.8);
   }
   to {
     opacity: 1;
@@ -354,6 +357,16 @@ textarea {
   animation: appear-bottom linear;
   animation-timeline: view();
   animation-range: entry 0 cover 40%;
+}
+@keyframes appear-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(70px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
 }
 .common-animation {
   animation: appear linear;
@@ -368,16 +381,6 @@ textarea {
   to {
     opacity: 1;
     transform: scale(1);
-  }
-}
-@keyframes appear-bottom {
-  from {
-    opacity: 0;
-    transform: translateY(70px) scale(0.6);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0) scale(1);
   }
 }
 .animated-btn.clicked {
