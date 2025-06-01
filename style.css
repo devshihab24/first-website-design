@@ -22,6 +22,7 @@
   max-width: 60ch;
   padding: 20px 0;
 }
+/* first section design */
 .first-section {
   background-color: #080808;
   /* height: 700px; */
@@ -36,7 +37,8 @@
   justify-content: space-around;
   align-items: center;
   font-size: 18px;
-  border-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .list {
   list-style: none;
@@ -84,7 +86,7 @@
   font-size: 16px;
   font-weight: 500;
   color: white;
-  box-shadow: 0 0 10px #62ba1b;
+  box-shadow: 0 0 8px #62ba1b;
   cursor: pointer;
 }
 #worked-with {
@@ -108,9 +110,15 @@
 .worked {
   border: 1px solid #1b1b1b;
   border-radius: 6px;
-  padding: 14px 60px;
+  padding: 14px;
+  width: 120px;
+  text-align: center;
   font-size: 32px;
 }
+.menu-icon {
+  display: none;
+}
+/* second section design */
 .case-studies {
   /* border: 2px solid red; */
   width: 70%;
@@ -230,6 +238,7 @@
   /* border: 2px solid black; */
   padding: 50px 0;
   display: flex;
+    gap: 20px;
   justify-content: space-around;
 }
 .works {
@@ -257,7 +266,7 @@
   width: 30%;
   margin: 40px auto;
 }
-form > label {
+.form > label {
   display: block;
   color: white;
   padding-bottom: 8px;
@@ -274,6 +283,7 @@ textarea {
   border-radius: 4px;
   background-color: #d8d8d8;
   margin-bottom: 20px;
+  box-shadow: inset 6px 6px 8px rgba(0, 0, 0, 0.5);
 }
 #submit-btn {
   width: 100%;
@@ -281,7 +291,7 @@ textarea {
   border: none;
   border-radius: 4px;
   background-color: #3f8e00;
-  box-shadow: 0 0 12px #3f8e00;
+  box-shadow: 0 0 8px #3f8e00;
   color: #ffffff;
   font-size: 18px;
   cursor: pointer;
@@ -295,68 +305,242 @@ textarea {
   color: var(--common-color);
   padding: 30px 0;
 }
-.animated-from-left{
+.animated-from-left {
   animation: appear-left linear;
   animation-timeline: view();
-  animation-range: entry 0 cover 50%;
+  animation-range: entry 0 cover 40%;
 }
-@keyframes appear-left{
-  from{
+@keyframes appear-left {
+  from {
     opacity: 0;
-    transform: translateX(-70px);
-  }to{
+    transform: translateX(-70px) scale(0.6);
+  }
+  to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0) scale(1);
   }
 }
-.animated-from-right{
+.animated-from-right {
   animation: appear-right linear;
   animation-timeline: view();
-  animation-range: entry 0 cover 50%;
+  animation-range: entry 0 cover 40%;
 }
-@keyframes appear-right{
-  from{
+@keyframes appear-right {
+  from {
     opacity: 0;
-    transform: translateX(70px);
-  }to{
+    transform: translateX(70px) scale(0.6);
+  }
+  to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0) scale(1);
   }
 }
-.animated-from-top{
+.animated-from-top {
   animation: appear-top linear;
   animation-timeline: view();
-  animation-range: entry 0 cover 50%;
+  animation-range: entry 0 cover 40%;
 }
-@keyframes appear-top{
-  from{
+@keyframes appear-top {
+  from {
     opacity: 0;
-    transform: translateY(-70px);
-  }to{
+    transform: translateY(-70px) scale(0.6);
+  }
+  to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0) scale(1);
   }
 }
-.animated-from-bottom{
+.animated-from-bottom {
   animation: appear-bottom linear;
   animation-timeline: view();
-  animation-range: entry 0 cover 50%;
+  animation-range: entry 0 cover 40%;
 }
-@keyframes appear-bottom{
-  from{
+@keyframes appear-bottom {
+  from {
     opacity: 0;
-    transform: translateY(70px);
-  }to{
+    transform: translateY(70px) scale(0.6);
+  }
+  to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0) scale(1);
   }
 }
-.animated-btn.clicked{
+.animated-btn.clicked {
   animation: bounce 0.6s linear;
 }
-@keyframes bounce{
-  0%  {transform: scale(1);}
-  30%  {transform: scale(0.9);}
-  60%  {transform: scale(1.1);}
-  100%  {transform: scale(1);}
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(0.9);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* responsive section */
+
+@media screen and (max-width: 576px) {
+  .header{
+    justify-content: space-between;
+    padding: 20px;
+    width: calc(90% - 40px);
+    
+  }
+  .menu-icon {
+    display: block;
+  }
+  .common-para {
+    padding: 5px 0;
+  }
+  #work-p {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .list {
+    display: none;
+  }
+  .div-container {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 30px;
+    align-items: center;
+    width: 90%;
+    margin: 30px auto;
+  }
+  .info {
+    width: 100%;
+    height: 80%;
+  }
+  #first-img {
+    width: 70%;
+  }
+  #started-btn {
+    width: 100%;
+  }
+  #worked-with {
+    width: 90%;
+    padding: 10px 0;
+  }
+  .worked-with-container {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+  }
+  .case-container {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+  .content {
+    flex-direction: column;
+    margin: 0;
+    gap: 10px;
+  }
+  .case-studies {
+    width: 90%;
+    margin: 30px auto;
+  }
+  .case-container {
+    gap: 30px;
+    margin-top: 30px;
+  }
+  .case-container-2 {
+    flex-direction: column;
+  }
+  .testimonials-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 20px;
+  }
+  /* recent work section */
+  .recent-work-section {
+    width: 90%;
+    padding: 30px 0;
+  }
+  #recent-work {
+    width: 100%;
+    padding: 20px 0;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .works {
+    gap: 10px;
+  }
+  .work-name {
+    padding-top: 20px;
+  }
+  .know-more-btn {
+    width: 100%;
+  }
+  .login-form {
+    padding: 30px 0;
+  }
+  .login-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .form {
+    width: 90%;
+    margin: 20px auto;
+  }
+  .form > input,
+  textarea {
+    box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.5);
+  }
+  #submit-btn {
+    box-shadow: 0 0 4px #3f8e00;
+  }
+
+  /* animated part */
+  /* .animated-from-left {
+  animation: appear-left linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
+}
+@keyframes appear-left {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+  .animated-from-right {
+  animation: appear-right linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
+}
+@keyframes appear-right {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+} */
+  .common-animation {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 40%;
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 }
