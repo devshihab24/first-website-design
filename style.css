@@ -183,6 +183,7 @@ body {
 }
 .case-pic {
   border-radius: 8px;
+  /* width: 100%; */
 }
 .case-btn {
   padding: 10px 25px;
@@ -214,10 +215,44 @@ body {
   justify-content: space-between;
 }
 .teamed-with {
-  border: 1px solid gray;
+  position: relative;
   max-width: 45ch;
   padding: 20px;
   border-radius: 6px;
+  overflow: hidden;
+  background: #5d585855;
+}
+.teamed-with::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: inherit;
+  background: #0e1538;
+  z-index: -5;
+}
+.teamed-with::before {
+  content: "";
+  position: absolute;
+  height: 320%;
+  width: 180px;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  background: linear-gradient(
+    rgba(255, 69, 100, 0.708),
+    rgba(4, 255, 251, 0.607)
+  );
+  animation: rotate 5s linear infinite;
+  filter: blur(10px);
+  z-index: -10;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 .profile-pic {
   border-radius: 50%;
@@ -402,6 +437,60 @@ textarea {
 }
 
 /* responsive section */
+@media screen and (min-width: 577px) and (max-width: 992px) {
+  .common-para {
+    max-width: 80ch;
+  }
+  .case-container {
+    flex-direction: column;
+  }
+  .case-container-2 {
+    flex-direction: column-reverse;
+  }
+  #recent-work {
+    flex-direction: column;
+  }
+  .form {
+    width: 80%;
+    margin: 20px auto;
+  }
+  .login-form {
+    padding: 50px 0;
+  }
+  .testimonials-section {
+    grid-template-columns: 1fr;
+  }
+  .teamed-with {
+    max-width: 60ch;
+    padding: 30px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #5d585855;
+  }
+  .header {
+    justify-content: space-between;
+    padding: 20px;
+    width: calc(90% - 40px);
+  }
+  .menu-icon {
+    display: block;
+  }
+  .list {
+    display: none;
+  }
+  .div-container{
+    width: 90%;
+  }
+  #worked-with {
+    width: 90%;
+    padding: 10px 0;
+  }
+  .worked-with-container{
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+  }
+}
 
 @media screen and (max-width: 576px) {
   .header {
@@ -452,7 +541,8 @@ textarea {
   }
   .case-container {
     flex-direction: column-reverse;
-    gap: 20px;
+    gap: 30px;
+    margin-top: 30px;
   }
   .content {
     flex-direction: column;
@@ -463,10 +553,7 @@ textarea {
     width: 90%;
     margin: 30px auto;
   }
-  .case-container {
-    gap: 30px;
-    margin-top: 30px;
-  }
+
   .case-container-2 {
     flex-direction: column;
   }
@@ -494,6 +581,7 @@ textarea {
   }
   .know-more-btn {
     width: 100%;
+    margin-top: 10px;
   }
   .login-form {
     padding: 30px 0;
@@ -514,33 +602,47 @@ textarea {
     box-shadow: 0 0 4px #3f8e00;
   }
   .animated-from-left {
-  animation: appear-left linear;
-  animation-timeline: view();
-  animation-range: entry 0 cover 40%;
-}
-@keyframes appear-left {
-  from {
-    opacity: 0;
-    transform: translateX(-10px) scale(0.9);
+    animation: appear-left linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 40%;
   }
-  to {
-    opacity: 1;
-    transform: translateX(0) scale(1);
+  @keyframes appear-left {
+    from {
+      opacity: 0;
+      transform: translateX(-10px) scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
   }
-}
-.animated-from-right {
-  animation: appear-right linear;
-  animation-timeline: view();
-  animation-range: entry 0 cover 40%;
-}
-@keyframes appear-right {
-  from {
-    opacity: 0;
-    transform: translateX(10px) scale(0.9);
+  .animated-from-right {
+    animation: appear-right linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 40%;
   }
-  to {
-    opacity: 1;
-    transform: translateX(0) scale(1);
+  @keyframes appear-right {
+    from {
+      opacity: 0;
+      transform: translateX(10px) scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
   }
-}
+  .teamed-with::before {
+    height: 320%;
+    width: 150px;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    background: linear-gradient(
+      rgba(255, 69, 100, 0.708),
+      rgba(4, 255, 251, 0.607)
+    );
+    animation: rotate 5s linear infinite;
+    filter: blur(10px);
+    z-index: -10;
+  }
 }
